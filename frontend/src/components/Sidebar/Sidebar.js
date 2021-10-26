@@ -12,10 +12,10 @@ import aj from "../../assets/img/download.png";
 import Link from '@material-ui/core/Link';
 import { NavLink } from 'react-router-dom';
 import useStyles from './style';
-import { Hidden } from '@material-ui/core';
 
 
-const Sidebar =({open,handleDrawerOpen}) => {
+
+const Sidebar = ({ open, handleDrawerOpen }) => {
     const classes = useStyles(open);
     const listItemData = [
         { label: 'Inbox', link: '/', icon: <MailIcon /> },
@@ -29,14 +29,14 @@ const Sidebar =({open,handleDrawerOpen}) => {
     ];
 
     return (
-    <>
+        <>
             <Drawer
                 className={classes.drawer}
                 variant="permanent"
                 classes={{
                     paper: classes.drawerPaper,
                 }}
-               
+
                 anchor="left"
             >
                 <div className={classes.toolbar}>
@@ -56,15 +56,15 @@ const Sidebar =({open,handleDrawerOpen}) => {
                         >
 
                             <ListItemIcon className={classes.listIcon}>{text.icon}</ListItemIcon>
-                            <ListItemText primary={text.label} /> 
-                            
+                            <ListItemText primary={text.label} />
+
                         </ListItem>
                     ))}
                 </List>
 
             </Drawer>
 
-      </>
+        </>
     );
 }
 
