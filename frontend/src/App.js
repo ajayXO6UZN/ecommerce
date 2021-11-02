@@ -8,6 +8,10 @@ import Layout from './components/Layout/Layout';
 import Test from './container/Test/Test';
 import { getAllCategory } from './actions/categoryAction';
 import { useDispatch, useSelector } from 'react-redux';
+import Product from './container/Product/Product';
+import Users from './container/Users/Users';
+import { getAllProduct } from './actions/productAction';
+import SignInOutContainer from './container/SignInOutContainer/SignInOutContainer';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +25,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getAllCategory());
+    dispatch(getAllProduct());
   }, []);
 
   return (
@@ -32,6 +37,9 @@ function App() {
         <Route  path="/nav" component={Navbar} />
         <Route  path="/layout" component={Layout} />
         <Route  path="/test" component={Test} />
+        <Route  path="/product" component={Product} />
+        <Route  path="/user" component={Users} />
+        <Route  path="/signup" component={SignInOutContainer} />
 
     
       </Switch>

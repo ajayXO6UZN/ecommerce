@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
         left: 0,
         height: '100%',
         zIndex: 1,
-        position: 'absolute',
+        position: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         '&::after': {

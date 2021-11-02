@@ -20,8 +20,8 @@ const Sidebar = ({ open, handleDrawerOpen }) => {
     const listItemData = [
         { label: 'Inbox', link: '/', icon: <MailIcon /> },
         { label: 'Starred', link: '/test', icon: <InboxIcon /> },
-        { label: 'Send email', link: '/email', icon: <MailIcon /> },
-        { label: 'Drafts', link: '/Drafts', icon: <InboxIcon /> },
+        { label: 'Produts', link: '/product', icon: <MailIcon /> },
+        { label: 'Users', link: '/user', icon: <InboxIcon /> },
         { label: 'Notification', link: '/Notification', icon: <MailIcon /> },
         { label: 'Listing', link: '/Listing', icon: <InboxIcon /> },
         { label: 'Tables', link: '/Tables', icon: <MailIcon /> },

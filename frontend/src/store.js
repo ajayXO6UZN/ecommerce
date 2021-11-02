@@ -4,10 +4,22 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import {
   newCategoryReducer
 } from "./reducers/categoryReducer";
+import {
+  newProductReducer,
+  productsReducer,
+  productReducer
+} from "./reducers/productReducer";
 
+import {
+  userReducer,
+} from "./reducers/userReducer";
 
 const reducer = combineReducers({
-  allCategoryList:newCategoryReducer,
+  allCategoryList: newCategoryReducer,
+  newProduct: newProductReducer,
+  products: productsReducer,
+  product: productReducer,
+  user: userReducer
 });
 
 const middleware = [thunk];

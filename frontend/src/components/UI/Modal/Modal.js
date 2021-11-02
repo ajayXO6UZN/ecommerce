@@ -68,10 +68,10 @@ const Modal = (props) => {
     const classes = useStyles(props);
     return (
         <>
-            <Dialog onClose={props.handleClose} aria-labelledby="customized-dialog-title"
+            <Dialog onClose={props.simpleHandleClose} aria-labelledby="customized-dialog-title"
                 classes={{ paperWidthSm: classes.dialogCustomizedWidth }}
                 open={props.open}>
-                <DialogTitle id="customized-dialog-title" onClose={props.handleClose}>
+                <DialogTitle id="customized-dialog-title" onClose={props.simpleHandleClose}>
                     {props.handleTitle}
                 </DialogTitle>
                 <DialogContent dividers>
