@@ -76,3 +76,42 @@ export const register = (userData) => async (dispatch) => {
     }
 };
 
+// get All Users
+export const getAllUsers = () => async (dispatch) => {
+    try {
+        dispatch({ type: ALL_USERS_REQUEST });
+        const { data } = await axios.get(`/api/admin/allUsers`);
+
+        dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
+    } catch (error) {
+        dispatch({ type: ALL_USERS_FAIL, payload: error.response.data.message });
+    }
+};
+
+// Update Product
+export const updateUser = (userData) => async (dispatch) => {
+    try {
+        console.log(userData)
+        dispatch({ type: UPDATE_USER_REQUEST });
+
+        const config = {
+            headers: { "Content-Type": "application/json" },
+        };
+
+        const { data } = await axios.post(
+            `/api/admin/updateUser`,
+            userData,
+            config
+        );
+
+        dispatch({
+            type: UPDATE_USER_SUCCESS,
+            payload: data.success,
+        });
+    } catch (error) {
+        dispatch({
+            type: UPDATE_USER_FAIL,
+            payload: error.response.data.message,
+        });
+    }
+};

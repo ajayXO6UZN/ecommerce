@@ -12,6 +12,8 @@ import {
 
 import {
   userReducer,
+  allUsersReducer,
+  profileReducer
 } from "./reducers/userReducer";
 
 const reducer = combineReducers({
@@ -19,7 +21,9 @@ const reducer = combineReducers({
   newProduct: newProductReducer,
   products: productsReducer,
   product: productReducer,
-  user: userReducer
+  user: userReducer,
+  allUsers: allUsersReducer,
+  profile: profileReducer,
 });
 
 const middleware = [thunk];

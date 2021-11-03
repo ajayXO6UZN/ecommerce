@@ -22,6 +22,7 @@ export default makeStyles((theme) => ({
         width: '97%',
         marginBottom: '10px'
     },
+   
     imagePreview: {
         display: 'flex',
         flexWrap: 'wrap'

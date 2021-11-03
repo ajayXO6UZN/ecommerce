@@ -1,17 +1,19 @@
 const express = require("express");
 const {
-  registerUser,
-  loginUser,
-  logout,
-  forgotPassword,
-  resetPassword,
-  getUserDetails,
-  updatePassword,
-  updateProfile,
-  getAllUser,
-  getSingleUser,
-  updateUserRole,
-  deleteUser,
+    registerUser,
+    loginUser,
+    logout,
+    forgotPassword,
+    resetPassword,
+    getUserDetails,
+    updatePassword,
+    updateProfile,
+    getAllUser,
+    getSingleUser,
+    updateUserRole,
+    deleteUser,
+    getAllUsers,
+    updateUser,
 } = require("../controllers/user");
 //const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 const router = express.Router();
@@ -30,9 +32,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.post("/register",upload.array('userImage'),registerUser);
+router.post("/register", upload.array('userImage'), registerUser);
 
 router.route("/login").post(loginUser);
+
+router.route("/admin/allUsers").get(getAllUsers);
+
+router.post('/admin/updateUser', upload.array("userImage"), updateUser);
+
 
 // router.route("/password/forgot").post(forgotPassword);
 
@@ -56,4 +63,4 @@ router.route("/login").post(loginUser);
 //   .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
 //   .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
 
- module.exports = router;
+module.exports = router;

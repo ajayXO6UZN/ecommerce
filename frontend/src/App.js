@@ -12,6 +12,7 @@ import Product from './container/Product/Product';
 import Users from './container/Users/Users';
 import { getAllProduct } from './actions/productAction';
 import SignInOutContainer from './container/SignInOutContainer/SignInOutContainer';
+import { getAllUsers } from './actions/userAction';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +27,7 @@ function App() {
   useEffect(() => {
     dispatch(getAllCategory());
     dispatch(getAllProduct());
+    dispatch(getAllUsers());
   }, []);
 
   return (
